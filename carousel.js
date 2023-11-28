@@ -1,8 +1,8 @@
-(function() {
+(function () {
   "use strict";
 
   function Carousel(setting) {
-    if(document.querySelector(setting.wrap) === null) {
+    if (document.querySelector(setting.wrap) === null) {
       console.error(`Carousel not fount selector ${setting.wrap}`);
       return;
     }
@@ -11,12 +11,11 @@
     let privates = {};
 
 
-    /* Public methods */
     // Prev slide
     this.prev_slide = () => {
       --privates.opt.position;
 
-      if(privates.opt.position < 0) {
+      if (privates.opt.position < 0) {
         privates.sel.wrap.classList.add('s-notransition');
         privates.opt.position = privates.opt.max_position - 1;
       }
@@ -29,7 +28,7 @@
     this.next_slide = () => {
       ++privates.opt.position;
 
-      if(privates.opt.position >= privates.opt.max_position) {
+      if (privates.opt.position >= privates.opt.max_position) {
         privates.opt.position = 0;
       }
 
@@ -55,13 +54,13 @@
     };
 
     // Control
-    if(privates.sel.prev !== null) {
+    if (privates.sel.prev !== null) {
       privates.sel.prev.addEventListener('click', () => {
         this.prev_slide();
       });
     }
 
-    if(privates.sel.next !== null) {
+    if (privates.sel.next !== null) {
       privates.sel.next.addEventListener('click', () => {
         this.next_slide();
       });
