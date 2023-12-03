@@ -6,11 +6,11 @@ const itemElms = document.querySelector('.goods_section-index');
 
 function createItem(data) {
     data.forEach((item) => {
-        contentEl.insertAdjacentHTML('beforeend', getCart(item.img, item.card, item.title, item.description, item.price))
+        contentEl.insertAdjacentHTML('beforeend', getCart(item.img, item.title, item.description, item.price))
     })
 }
 
-function getCart(img, card, title, description, price) {
+function getCart(img, title, description, price) {
     return `
     <div class="items_up">
     <a
@@ -18,7 +18,7 @@ function getCart(img, card, title, description, price) {
         href="#"
         style="background-image: url(${img})"
     >
-        <img class="buy" src="${card}" alt="Add card"
+        <img class="buy" src="icons/Addtocart.png" alt="Add card"
     /></a>
     <div class="items_about">
         <p class="items_name">${title}</p>
